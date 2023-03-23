@@ -21,7 +21,9 @@ jobs:
         sudo apt-get install gnat gprbuild
 
     - name: git clone alire
-      run: git clone https://github.com/alire-project/alire.git --recurse-submodules
+      run: >
+        export ALIRE_OS=linux
+        git clone https://github.com/alire-project/alire.git --recurse-submodules
 
     - name: build alire
       run: gprbuild alire/alr_env.gpr
