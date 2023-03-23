@@ -9,7 +9,8 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+   runs-on: arch-linux
+#   runs-on: ubuntu-latest
 
     steps:
     - name: Checkout
