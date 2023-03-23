@@ -20,5 +20,8 @@ jobs:
         sudo apt-get update &&
         sudo apt-get install gnat gprbuild
 
+    - name: git clone alire
+      run: git clone https://github.com/alire-project/alire.git --recurse-submodules
+
     - name: gprbuild yass.gpr
       run: gprbuild -j0 -p -Pyass.gpr
