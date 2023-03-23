@@ -23,5 +23,8 @@ jobs:
     - name: git clone alire
       run: git clone https://github.com/alire-project/alire.git --recurse-submodules
 
+    - name: build alire
+      run: gprbuild alire/alr_env.gpr
+
     - name: gprbuild yass.gpr
       run: gprbuild -j0 -p -Pyass.gpr
