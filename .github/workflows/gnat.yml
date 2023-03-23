@@ -21,12 +21,12 @@ jobs:
         sudo apt-get install gnat gprbuild
 
     - name: git clone alire
-      run: >
-        export ALIRE_OS=linux
-        git clone https://github.com/alire-project/alire.git --recurse-submodules
+      run: git clone https://github.com/alire-project/alire.git --recurse-submodules
 
     - name: build alire
-      run: gprbuild alire/alr_env.gpr
+      run: >
+        export ALIRE_OS=linux
+        gprbuild alire/alr_env.gpr
 
     - name: gprbuild yass.gpr
       run: gprbuild -j0 -p -Pyass.gpr
