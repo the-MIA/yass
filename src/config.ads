@@ -19,7 +19,9 @@ with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Containers.Indefinite_Hashed_Maps;
 with Ada.Containers.Indefinite_Vectors;
 with Ada.Strings.Hash;
-with AWS.Templates; use AWS.Templates;
+
+with Templates;
+--  with AWS.Templates; use AWS.Templates;
 
 -- ****h* Yass/Config
 -- FUNCTION
