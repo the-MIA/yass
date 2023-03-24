@@ -150,7 +150,9 @@ package Config is
    -- Used to store AWS template table tags
    -- SOURCE
    package TableTags_Container is new Ada.Containers.Indefinite_Hashed_Maps
-     (Key_Type => String, Element_Type => Vector_Tag, Hash => Ada.Strings.Hash,
+     (Key_Type        => String,
+      Element_Type    => Templates_Parser.Vector_Tag,
+      Hash            => Ada.Strings.Hash,
       Equivalent_Keys => "=");
    -- ****
 
