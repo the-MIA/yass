@@ -29,5 +29,8 @@ jobs:
 #    - name: build alire
 #      run: ALIRE_OS=linux gprbuild alire/alr_env.gpr -j0
 
-    - name: gprbuild yass.gpr
-      run: gprbuild -j0 -p -Pyass.gpr
+#    - name: gprbuild yass.gpr
+#      run: gprbuild -j0 -p -Pyass.gpr
+      
+    - name: ddd
+      run: alr build
