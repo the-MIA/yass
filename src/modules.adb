@@ -21,7 +21,10 @@ with Ada.Text_IO;
 with GNAT.Directory_Operations;
 with GNAT.OS_Lib;
 with GNAT.Expect;
-with AWS.Templates;
+
+with Templates;
+--with AWS.Templates;
+
 with Messages;
 
 package body Modules is
@@ -38,7 +41,9 @@ package body Modules is
          use Ada.Text_IO;
          use GNAT.OS_Lib;
          use GNAT.Expect;
-         use AWS.Templates;
+
+         use Templates;
+--         use AWS.Templates;
          use Messages;
 
          Module: Process_Descriptor; --## rule line off GLOBAL_REFERENCES
@@ -147,9 +152,14 @@ package body Modules is
                   else
                      Temp_Tag :=
                        Temp_Tag &
-                       AWS.Templates.Item
-                         (T => Table_Tags(To_String(Source => Tag_Name)),
+                       Templates.Item
+                         (T => Table_Tags (To_String (Source => Tag_Name)),
                           N => I);
+--                     Temp_Tag :=
+--                       Temp_Tag &
+--                       AWS.Templates.Item
+--                         (T => Table_Tags(To_String(Source => Tag_Name)),
+--                          N => I);
                   end if;
                end loop Set_Tags_Loop;
                Table_Tags(To_String(Source => Tag_Name)) := Temp_Tag;
