@@ -24,11 +24,14 @@ with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Text_IO; use Ada.Text_IO;
 with GNAT.Directory_Operations; use GNAT.Directory_Operations;
 with GNAT.OS_Lib;
-with AWS.Response;
-with AWS.Services.Page_Server;
-with AWS.Services.Directory;
-with AWS.Server;
-with AWS.Status;
+
+with Web_Server;
+--  with AWS.Response;
+--  with AWS.Services.Page_Server;
+--  with AWS.Services.Directory;
+--  with AWS.Server;
+--  with AWS.Status;
+
 with AtomFeed;
 with Config; use Config;
 with Messages; use Messages;
