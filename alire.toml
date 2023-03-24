@@ -1,0 +1,8 @@
+version = "0.0.1-dev"
+description = "yass"
+name = "yass"
+
+[[depends-on]]
+aws = "*"
+xmlada = "*"
+templates_parser "*"
