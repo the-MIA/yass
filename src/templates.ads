@@ -1,4 +1,5 @@
-with AWS.Templates;
+with Templates_Parser;
+--  with AWS.Templates;
 
 package Templates
-  renames AWS.Templates;
+  renames Templates_Parser;
