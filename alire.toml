@@ -3,6 +3,6 @@ description = "yass"
 name = "yass"
 
 [[depends-on]]
-aws = "*"
-xmlada = "*"
+aws = "~21.0.0"
+xmlada = "~21.0.0"
 templates_parser "*"
