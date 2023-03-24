@@ -153,7 +153,7 @@ package Config is
      (Key_Type        => String,
       Element_Type    => Templates.Vector_Tag,
       Hash            => Ada.Strings.Hash,
-      Equivalent_Keys => "=");
+      Equivalent_Keys => Templates."=");
    -- ****
 
    -- ****v* Config/Config.Global_Table_Tags
