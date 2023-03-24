@@ -5,4 +5,4 @@ name = "yass"
 [[depends-on]]
 aws = "~21.0.0"
 xmlada = "~21.0.0"
-templates_parser "*"
+templates_parser = "*"
