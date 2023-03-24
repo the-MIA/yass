@@ -1,6 +1,7 @@
 --  with "aws";
 with "ews";
 with "xmlada";
+with "templates_parser";
 
 project yass is
 
