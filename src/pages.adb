@@ -27,9 +27,12 @@ with Ada.Text_IO; use Ada.Text_IO;
 with Interfaces.C;
 with Interfaces.C.Strings;
 with GNAT.Directory_Operations; use GNAT.Directory_Operations;
-with AWS.Templates;
-with AWS.Templates.Utils;
-with Config; use Config;
+
+with Templates;
+--  with AWS.Templates;
+--  with AWS.Templates.Utils;
+
+½with Config; use Config;
 with Sitemaps; use Sitemaps;
 with AtomFeed;
 with Modules; use Modules;
@@ -43,7 +46,8 @@ package body Pages is
       use Ada.Exceptions;
       use Interfaces.C;
       use Interfaces.C.Strings;
-      use AWS.Templates;
+      use Templates;
+--      use AWS.Templates;
       use AtomFeed;
 
       Layout, Content, Change_Frequency, Page_Priority: Unbounded_String :=
@@ -83,9 +87,12 @@ package body Pages is
          Import => True,
          Convention => C,
          External_Name => "cmark_markdown_to_html";
+
       -- Insert selected list of tags Tags_List to templates
-      procedure Insert_Tags(Tags_List: Tags_Container.Map) is
-         use AWS.Templates.Utils;
+      procedure Insert_Tags (Tags_List: Tags_Container.Map)
+      is
+         use Templates.Utils;
+--         use AWS.Templates.Utils;
       begin
          Insert_Tags_Loop :
          for I in Tags_List.Iterate loop
