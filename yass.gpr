@@ -3,7 +3,7 @@ with "ews";
 --  with "xmlada";
 --  with "templates_parser";
 with "tp_shared";
-with "tp_xmlada";
+--  with "tp_xmlada";
 
 project yass is
 
