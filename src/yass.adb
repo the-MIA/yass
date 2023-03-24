@@ -415,7 +415,7 @@ begin
       Monitor_Site.Start;
       Monitor_Config.Start;
 
-      Web_Server.Server.Wait (Mode => Web_Server.Server.Q_Key_Pressed);
+      Web_Server.Server.Wait;
 --      AWS.Server.Wait(Mode => AWS.Server.Q_Key_Pressed);
 
       if Yass_Config.Server_Enabled then
