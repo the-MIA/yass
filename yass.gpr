@@ -42,13 +42,14 @@ project yass is
     package Compiler is
       case Mode is
          when "dev" | "debug" =>
-            for Default_Switches ("ada") use ("-gnatwa",
-               "-fstack-check",
-               "-gnatVa",
-               "-gnatU",
-               "-gnatf",
-               "-gnateE",
-               "-gnaty3aAbCdefhIklnOprSux"
+            for Default_Switches ("ada") use (
+               "-gnatwa"
+--               "-fstack-check",
+--               "-gnatVa",
+--               "-gnatU",
+--               "-gnatf",
+--               "-gnateE",
+--               "-gnaty3aAbCdefhIklnOprSux"
 --               "-gnatwe"
                );
          when "release" =>
