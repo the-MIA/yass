@@ -151,10 +151,10 @@ package Config is
    -- SOURCE
    package TableTags_Container is new
       Ada.Containers.Indefinite_Hashed_Maps (
-         Key_Type        => Standard.String,
+         Key_Type        => String,
          Element_Type    => Templates.Vector_Tag,
          Hash            => Ada.Strings.Hash,
-         Equivalent_Keys => Standard."="
+         Equivalent_Keys => "="
       );
    -- ****
 
