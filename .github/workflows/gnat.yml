@@ -2,7 +2,7 @@ name: GNAT
 
 on:
   push:
-    branches: [ "dev*" ]
+    branches: [ "dev*", "main", "master" ]
   pull_request:
     branches: [ "dev*", "main", "master" ]
 
