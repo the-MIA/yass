@@ -4,7 +4,7 @@ on:
   push:
     branches: [ "dev*" ]
   pull_request:
-    branches: [ "dev*" ]
+    branches: [ "dev*", "main", "master" ]
 
 jobs:
   build:
@@ -15,22 +15,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
-#    - name: install gnat gprbuild
-#      run: >
-#        sudo apt-get update &&
-#        sudo apt-get install gnat gprbuild
-
-    - name: Set up stable `alr`
+    - name: Set up alire
       uses: alire-project/setup-alire@v1
-
-#    - name: git clone alire
-#      run: git clone https://github.com/alire-project/alire.git --recurse-submodules
-
-#    - name: build alire
-#      run: ALIRE_OS=linux gprbuild alire/alr_env.gpr -j0
-
-#    - name: gprbuild yass.gpr
-#      run: gprbuild -j0 -p -Pyass.gpr
       
-    - name: ddd
+    - name: alr build
       run: alr build
