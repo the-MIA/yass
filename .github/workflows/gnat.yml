@@ -23,11 +23,11 @@ jobs:
     - name: Set up stable `alr`
       uses: alire-project/setup-alire@v1
 
-    - name: git clone alire
-      run: git clone https://github.com/alire-project/alire.git --recurse-submodules
+#    - name: git clone alire
+#      run: git clone https://github.com/alire-project/alire.git --recurse-submodules
 
-    - name: build alire
-      run: ALIRE_OS=linux gprbuild alire/alr_env.gpr -j0
+#    - name: build alire
+#      run: ALIRE_OS=linux gprbuild alire/alr_env.gpr -j0
 
     - name: gprbuild yass.gpr
       run: gprbuild -j0 -p -Pyass.gpr
