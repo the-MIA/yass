@@ -20,6 +20,9 @@ jobs:
         sudo apt-get update &&
         sudo apt-get install gnat gprbuild
 
+    - name: Set up stable `alr`
+      uses: alire-project/setup-alire@v1
+
     - name: git clone alire
       run: git clone https://github.com/alire-project/alire.git --recurse-submodules
 
