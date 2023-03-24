@@ -1,0 +1,7 @@
+version = "0.0.1-dev"
+description = "yass"
+name = "yass"
+
+[[depends-on]]
+aws = "~21.0.0"
+xmlada = "~21.0.0"
