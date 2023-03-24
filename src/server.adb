@@ -46,7 +46,8 @@ package body Server is
    -- FUNCTION
    -- Instance of Http server which will be serving the project's files
    -- SOURCE
-   Http_Server: AWS.Server.HTTP;
+   Http_Server: WeB_Server.Server.HTTP;
+--   Http_Server: AWS.Server.HTTP;
    -- ****
    --## rule on GLOBAL_REFERENCES
 
@@ -297,17 +298,23 @@ package body Server is
       end select;
    end Monitor_Config;
 
-   function Callback(Request: AWS.Status.Data) return AWS.Response.Data is
-      use AWS.Services.Directory;
+   --------------
+   -- Callback --
+   --------------
+ 
+   function Callback (Request: Web_Server.Status.Data)
+                     return Web_Server.Response.Data
+   is
+      use Web_Server.Services.Directory;
 
-      Uri: constant String := AWS.Status.URI(D => Request);
+      Uri: constant String := Web_Server.Status.URI(D => Request);
    begin
       -- Show directory listing if requested
       if Kind
           (Name => To_String(Source => Yass_Config.Output_Directory) & Uri) =
         Directory then
          return
-           AWS.Response.Build
+           Web_Server.Response.Build
              (Content_Type => "text/html",
               Message_Body =>
                 Browse
@@ -319,12 +326,38 @@ package body Server is
                    Request => Request));
       end if;
       -- Show selected page if requested
-      return AWS.Services.Page_Server.Callback(Request => Request);
+      return Web_Server.Services.Page_Server.Callback(Request => Request);
    end Callback;
+
+--   function Callback(Request: AWS.Status.Data) return AWS.Response.Data is
+--      use AWS.Services.Directory;
+--
+--      Uri: constant String := AWS.Status.URI(D => Request);
+--   begin
+--      -- Show directory listing if requested
+--      if Kind
+--          (Name => To_String(Source => Yass_Config.Output_Directory) & Uri) =
+--        Directory then
+--         return
+--           AWS.Response.Build
+--             (Content_Type => "text/html",
+--             Message_Body =>
+--                Browse
+--                  (Directory_Name =>
+--                     To_String(Source => Yass_Config.Output_Directory) & Uri,
+--                   Template_Filename =>
+--                     To_String(Source => Yass_Config.Layouts_Directory) &
+--                     Dir_Separator & "directory.html",
+--                   Request => Request));
+--      end if;
+--      -- Show selected page if requested
+--      return AWS.Services.Page_Server.Callback(Request => Request);
+--   end Callback;
 
    procedure Start_Server is
    begin
-      AWS.Server.Start
+      Web_Server.Server.Start
+--      AWS.Server.Start
         (Web_Server => Http_Server, Name => "YASS static page server",
          Port => Yass_Config.Server_Port, Callback => Callback'Access,
          Max_Connection => 5);
@@ -341,7 +374,8 @@ package body Server is
    begin
       Put(Item => "Shutting down server...");
       --## rule off DIRECTLY_ACCESSED_GLOBALS
-      AWS.Server.Shutdown(Web_Server => Http_Server);
+      Web_Server.Server.Shutdown(Web_Server => Http_Server);
+--      AWS.Server.Shutdown(Web_Server => Http_Server);
       --## rule on DIRECTLY_ACCESSED_GLOBALS
    end Shutdown_Server;
 
