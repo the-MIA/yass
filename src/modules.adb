@@ -77,6 +77,7 @@ package body Modules is
             end if;
             return Empty_Tag;
          end Tag_Exist;
+
          -- Send to the module values for selected composite tag in Table_Tags list of tags.
          -- First response contains amount of values.
          procedure Send_Table_Tag(Table_Tags: TableTags_Container.Map) is
@@ -89,9 +90,11 @@ package body Modules is
             for I in 1 .. Size(T => Table_Tags(Key)) loop
                Send
                  (Descriptor => Module,
-                  Str => AWS.Templates.Item(T => Table_Tags(Key), N => I));
+                  Str => Templates.Item (T => Table_Tags(Key), N => I));
+--                  Str => AWS.Templates.Item(T => Table_Tags(Key), N => I));
             end loop Send_Table_Tags_Loop;
          end Send_Table_Tag;
+
          -- Edit selected simple tag in selected Tags list of tags.
          procedure Edit_Tag(Tags: in out Tags_Container.Map) is
             Key: constant String := To_String(Source => Tag_Name);
