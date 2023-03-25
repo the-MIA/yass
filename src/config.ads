@@ -20,7 +20,7 @@ with Ada.Containers.Indefinite_Hashed_Maps;
 with Ada.Containers.Indefinite_Vectors;
 with Ada.Strings.Hash;
 
-with Templates;
+with Templates; use Templates;
 --  with AWS.Templates; use AWS.Templates;
 
 -- ****h* Yass/Config
