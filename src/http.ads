@@ -28,7 +28,9 @@ is
 
    package Services
    is
-      type Directory is null record;
+      package Directory is
+      end Directory;
+
       procedure Page_Server;
    end Services;
 
