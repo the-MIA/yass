@@ -23,7 +23,8 @@ is
    package Response
    is
       type Data is null record;
-      procedure Build;
+      procedure Build (Contents     : String;
+                       Body_Message : String);
    end Response;
 
    package Services
