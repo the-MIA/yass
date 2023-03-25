@@ -32,7 +32,7 @@ with Templates;
 --  with AWS.Templates;
 --  with AWS.Templates.Utils;
 
-½with Config; use Config;
+with Config; use Config;
 with Sitemaps; use Sitemaps;
 with AtomFeed;
 with Modules; use Modules;
