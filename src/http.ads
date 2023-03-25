@@ -20,10 +20,10 @@ is
 
    package Response
    is
-   end Status;
+   end Response;
 
    package Services
    is
-   end Status;
+   end Services;
 
 end HTTP;
