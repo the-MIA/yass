@@ -16,14 +16,20 @@ is
 
    package Status
    is
+      type Data is null record;
+      type URI is null record;
    end Status;
 
    package Response
    is
+      type Data is null record;
+      procedure Build;
    end Response;
 
    package Services
    is
+      type Directory is null record;
+      procedure Page_Server;
    end Services;
 
 end HTTP;
