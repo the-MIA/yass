@@ -28,7 +28,7 @@ with Interfaces.C;
 with Interfaces.C.Strings;
 with GNAT.Directory_Operations; use GNAT.Directory_Operations;
 
-with Templates;
+with Templates.Utils;
 --  with AWS.Templates;
 --  with AWS.Templates.Utils;
 
