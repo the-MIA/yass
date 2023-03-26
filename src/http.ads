@@ -5,6 +5,19 @@ is
       Socket_Error : exception;
    end Net;
 
+   package Status
+   is
+      type Data is null record;
+      function URI (D : Status.Data) return String;
+   end Status;
+
+   package Response
+   is
+      type Data is null record;
+      procedure Build (Content_Type : String;
+                       Message_Body : String);
+   end Response;
+
    package Server
    is
       procedure Wait;
@@ -20,19 +33,6 @@ is
       procedure Stop;
       procedure Shutdown (Web_Server : HTTP);
    end Server;
-
-   package Status
-   is
-      type Data is null record;
-      function URI (D : Status.Data) return String;
-   end Status;
-
-   package Response
-   is
-      type Data is null record;
-      procedure Build (Content_Type : String;
-                       Message_Body : String);
-   end Response;
 
    package Services
    is
