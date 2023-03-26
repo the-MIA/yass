@@ -28,7 +28,7 @@ is
          Name       : String;
          Port       : Natural;
          Callback   : Callback_Access;
-         Max_Connections : Positive);
+         Max_Connection : Positive);
 
       procedure Stop;
       procedure Shutdown (Web_Server : HTTP);
