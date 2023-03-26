@@ -17,7 +17,7 @@ is
    package Status
    is
       type Data is null record;
-      function URI (Request : Status.Data) return String;
+      function URI (D : Status.Data) return String;
    end Status;
 
    package Response
