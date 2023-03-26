@@ -32,7 +32,10 @@ is
       package Directory is
       end Directory;
 
-      procedure Page_Server;
+      package Page_Server
+      is
+         function Callback (Request : Status.Data) return Response.Data;
+      end Page_Server;
    end Services;
 
 end HTTP;
