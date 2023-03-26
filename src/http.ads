@@ -28,7 +28,7 @@ is
          Name       : String;
          Port       : Natural;
          Callback   : Callback_Access;
-         Max_Connetions : Positive);
+         Max_Connections : Positive);
 
       procedure Stop;
       procedure Shutdown (Web_Server : HTTP);
@@ -37,6 +37,7 @@ is
    package Services
    is
       package Directory is
+         function Browse return String;
       end Directory;
 
       package Page_Server
