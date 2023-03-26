@@ -9,9 +9,16 @@ is
    is
       procedure Wait;
       type HTTP is null record;
-      procedure Start;
+      type Callback_Access is access function (Request : Status.Data) return Response.Data;
+      procedure Start
+        (Web_Server : HTTP;
+         Name       : String;
+         Port       : Natural;
+         Callback   : Callback_Access;
+         Max_Connetions : Positive);
+
       procedure Stop;
-      procedure Shutdown;
+      procedure Shutdown (Web_Server : HTTP);
    end Server;
 
    package Status
