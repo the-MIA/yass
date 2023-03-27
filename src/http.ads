@@ -37,7 +37,7 @@ is
    package Services
    is
       package Directory is
-         function Browse return String;
+         function Browse (A, B : String) return String;
       end Directory;
 
       package Page_Server
