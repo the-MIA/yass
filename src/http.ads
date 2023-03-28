@@ -36,8 +36,14 @@ is
 
    package Services
    is
-      package Directory is
-         function Browse (Directory_Name, Template_Filename : String) return String;
+      package Directory
+      is
+         function Browse (
+            Directory_Name    : String;
+            Template_Filename : String;
+            Request           : Status.Data)
+         return String;
+
       end Directory;
 
       package Page_Server
