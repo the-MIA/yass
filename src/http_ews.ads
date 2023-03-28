@@ -1,4 +1,4 @@
-package body HTTP_EWS
+package body HTTP -- _EWS
 is
    package Net
    is
@@ -8,4 +8,4 @@ is
    is
    end Server;
 
-end HTTP_EWS;
+end HTTP; -- _EWS;
