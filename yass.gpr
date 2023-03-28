@@ -18,7 +18,7 @@ project yass is
     type OS_Type is ("Windows", "Unix");
     OS : OS_Type := external ("OS", "Unix");
 
-    for Config_Body_Name ("Ada") use "http_aws.adb";
+    for Config_Body_File_Name ("Ada") use "http_aws.adb";
 
     package Builder is
       case Mode is
