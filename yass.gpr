@@ -20,7 +20,8 @@ project yass is
 
     package Config
     is
-       for Config_Body_File_Name ("Ada") use "http_aws.adb";
+--       for Config_Body_File_Name ("Ada") use "http_aws.adb";
+       for Config_Body_File_Name ("Ada") use "http_ews.adb";
     end Config;
 
     package Builder is
