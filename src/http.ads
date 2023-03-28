@@ -14,9 +14,12 @@ is
    package Response
    is
       type Data is private;
-      procedure Build (Content_Type : String;
-                       Message_Body : String;
-                       Response     : Data);
+
+      function Build (
+         Content_Type : String;
+         Message_Body : String)
+      return Data;
+
    private
       type Data is null record;  
    end Response;
