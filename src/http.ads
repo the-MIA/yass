@@ -13,10 +13,12 @@ is
 
    package Response
    is
-      type Data is null record;
+      type Data is private;
       procedure Build (Content_Type : String;
                        Message_Body : String;
-                       Response     : Response.Data);
+                       Response     : Data);
+   private
+      type Data is null record;  
    end Response;
 
    package Server
