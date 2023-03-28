@@ -15,7 +15,8 @@ is
    is
       type Data is null record;
       procedure Build (Content_Type : String;
-                       Message_Body : String);
+                       Message_Body : String;
+                       Response     : Response.Data);
    end Response;
 
    package Server
